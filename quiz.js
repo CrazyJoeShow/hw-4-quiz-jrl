@@ -109,3 +109,11 @@ function pageChange1() {
 	possAnswer3.textcontent = gameArray[0]['answer3'];
 	possAnswer4.textcontent = gameArray[0]['rightAnswer1'];
 }
+
+function pageChange2() {
+	mainHeadDisp.textContent = gameArray[1]['question'];
+	posiAnswer1.textContent = gameArray[1]['answer1'];
+	posiAnswer2.textContent = gameArray[1]['answer2'];
+	posiAnswer3.textContent = gameArray[1]['rightAnswer2'];
+	posiAnswer4.textContent = gameArray[1]['answer3'];
+}
