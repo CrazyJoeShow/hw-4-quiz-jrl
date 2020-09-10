@@ -145,4 +145,14 @@ function pageChange5() {
 	subHeadDisp.classList.remove('hideMe');
 	answerDisp.classList.add('hideMe');
 	formSubz.classList.remove('hideMe');
+
+	submitScore();
 }
+
+// if, else statements for the possible answers
+
+possAnswer1.addEventListener('click', function () {
+	if (possAnswer1 !== gameArray[0]['rightAnswer1']) {
+		secondsLeft = secondsLeft - 10;
+	}
+});
