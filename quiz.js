@@ -135,13 +135,13 @@ function pageChange4() {
 }
 // Final page
 function pageChange5() {
-	answerDisp.textcontent = 'Quiz is Finished.';
+	answerDisp.textContent = 'Quiz is Finished.';
 	document.getElementById('disappearDiv').remove();
 	document.getElementById('lineId').remove();
 	mainHeadDisp.classList.remove('text-center');
-	mainHeadDisp.textcontent = 'END';
+	mainHeadDisp.textContent = 'END';
 	subHeadDisp.classList.remove('text-center');
-	subHeadDisp.textcontent = 'Your Score' + trackedScore;
+	subHeadDisp.textContent = 'Your Score' + trackedScore;
 	subHeadDisp.classList.remove('hideMe');
 	answerDisp.classList.add('hideMe');
 	formSubz.classList.remove('hideMe');
@@ -156,3 +156,12 @@ possAnswer1.addEventListener('click', function () {
 		secondsLeft = secondsLeft - 10;
 	}
 });
+possAnswer2.addEventListener("click", function() {
+    if (mainHeadDisp.textContent == gameArray[2]["question"] &&
+        posiAnswer2.textContent == gameArray[2]["rightAnswer3"])
+        {answerDisp.textContent = "Great Job!";
+    console.log("page3");
+    scoreTabulator();
+    pageChange4();}
+    else if (mainHeadDisp.textContent)
+})
