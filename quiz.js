@@ -80,7 +80,7 @@ function setTimer() {
 		countDownNumbDisp.textContent = secondsLeft;
 		if (secondsLeft <= 0) {
 			clearInterval(timerInterval);
-			countDownNumbDisp.textcontent = 0;
+			countDownNumbDisp.textContent = 0;
 			answerDisp.textContent = "You've ran out of time.";
 		}
 	}, 1000);
@@ -103,11 +103,11 @@ function pageChange1() {
 	possAnswer4.classList.remove('hideMe');
 	lineDisp.classList.remove('hideMe');
 	answerDisp.classList.remove('hideMe');
-	mainHeadDisp.textcontent = gameArray[0]['question'];
-	possAnswer1.textcontent = gameArray[0]['answer1'];
-	possAnswer2.textcontent = gameArray[0]['answer2'];
-	possAnswer3.textcontent = gameArray[0]['answer3'];
-	possAnswer4.textcontent = gameArray[0]['rightAnswer1'];
+	mainHeadDisp.textContent = gameArray[0]['question'];
+	possAnswer1.textContent = gameArray[0]['answer1'];
+	possAnswer2.textContent = gameArray[0]['answer2'];
+	possAnswer3.textContent = gameArray[0]['answer3'];
+	possAnswer4.textContent = gameArray[0]['rightAnswer1'];
 }
 
 function pageChange2() {
@@ -156,12 +156,90 @@ possAnswer1.addEventListener('click', function () {
 		secondsLeft = secondsLeft - 10;
 	}
 });
-possAnswer2.addEventListener("click", function() {
-    if (mainHeadDisp.textContent == gameArray[2]["question"] &&
-        posiAnswer2.textContent == gameArray[2]["rightAnswer3"])
-        {answerDisp.textContent = "Great Job!";
-    console.log("page3");
-    scoreTabulator();
-    pageChange4();}
-    else if (mainHeadDisp.textContent)
-})
+possAnswer2.addEventListener('click', function () {
+	if (
+		mainHeadDisp.textContent == gameArray[2]['question'] &&
+		posiAnswer2.textContent == gameArray[2]['rightAnswer3']
+	) {
+		answerDisp.textContent = 'Great Job!';
+		console.log('page3');
+		scoreTabulator();
+		pageChange4();
+	} else if (
+		mainHeadDisp.textContent == gameArray[3]['question'] &&
+		possAnswer2.textContent == gameArray[3]['rightAnswer4']
+	) {
+		scoreTabulator();
+		secondsLeft = 0;
+		pageChange5();
+	} else {
+		secondsLeft = secondsLeft - 10;
+	}
+});
+
+posiAnswer3.addEventListener('click', function () {
+	if (
+		mainHeadDisp.textContent == gameArray[1]['question'] &&
+		posiAnswer3.textContent == gameArray[1]['rightAnswer2']
+	) {
+		answerDisp.textContent = 'GOOD JOB CODER!!';
+		console.log('correct page 2 log');
+		scoreTabulator();
+		pageChange3();
+	} else {
+		secondsLeft = secondsLeft - 10;
+	}
+});
+
+posiAnswer4.addEventListener('click', function () {
+	if (
+		mainHeadDisp.textContent == gameArray[0]['question'] &&
+		posiAnswer4.textContent == gameArray[0]['rightAnswer1']
+	) {
+		answerDisp.textContent = 'GOOD CODER!!!';
+		{
+			console.log('correct page 1 log');
+		}
+		scoreTabulator();
+		pageChange2();
+	} else {
+		secondsLeft = secondsLeft - 10;
+	}
+});
+
+//Submission
+subButty.addEventListener('click', function (event) {
+	var scoreStorageArray = JSON.parse(localStorage.getItem('infinityKey'));
+	if (scoreStorageArray === null) {
+		scoreStorageArray = [];
+	}
+
+	scoreForm.classList.remove('hideMe');
+	formSubz.classList.add('hideMe');
+	subHeadDisp.classList.add('hideMe');
+	mainHeadDisp.classList.add('hideMe');
+	userScore.classList.add('hideMe');
+	arrayScore = trackedScore;
+	initials = initialText.value;
+	console.log(arrayScore);
+	console.log(initials);
+
+	// array where I am storing values for user entry initials and high scores
+	scoreStorageArray.push({ userEntry: initials, highScore: trackedScore });
+
+	console.log(scoreStorageArray);
+	for (var i = 0; i < scoreStorageArray.length; i++) {
+		var scoreLi = document.createElement('div');
+		scoreLi.textContent =
+			'  INITIALS   ' +
+			scoreStorageArray[i].userEntry +
+			'   SCORE      ' +
+			scoreStorageArray[i].highScore;
+		scoreLi.setAttribute('data-index', i);
+		scoreLi.classList.add('coolScores');
+		scoreList.appendChild(scoreLi);
+		scoreSpan.textContent = scoreStorageArray.length;
+	}
+
+	localStorage.setItem('infinityKey', JSON.stringify(scoreStorageArray));
+});
