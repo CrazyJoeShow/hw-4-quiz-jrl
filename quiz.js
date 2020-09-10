@@ -117,3 +117,26 @@ function pageChange2() {
 	posiAnswer3.textContent = gameArray[1]['rightAnswer2'];
 	posiAnswer4.textContent = gameArray[1]['answer3'];
 }
+
+function pageChange3() {
+	mainHeadDisp.textContent = gameArray[2]['question'];
+	posiAnswer1.textContent = gameArray[2]['answer1'];
+	posiAnswer2.textContent = gameArray[2]['rightAnswer3'];
+	posiAnswer3.textContent = gameArray[2]['answer3'];
+	posiAnswer4.textContent = gameArray[2]['answer2'];
+}
+
+function pageChange4() {
+	mainHeadDisp.textContent = gameArray[3]['question'];
+	posiAnswer1.textContent = gameArray[3]['answer1'];
+	posiAnswer2.textContent = gameArray[3]['rightAnswer4'];
+	posiAnswer3.textContent = gameArray[3]['answer3'];
+	posiAnswer4.textContent = gameArray[3]['answer2'];
+}
+// Final page
+function pageChange5() {
+	answerDisp.textcontent = 'Quiz is Finished.';
+	document.getElementById('disappearDiv').remove();
+	document.getElementById('lineId').remove();
+	mainHeadDisp.classList.remove('text-center');
+}
