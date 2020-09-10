@@ -20,3 +20,10 @@ var possAnswer4 = document.querySelector('#answer4');
 
 var currentPage = 0;
 var trackedScore = 0;
+
+// Targeting Scores
+var scoreForm = document.querySelector('#scoreForm');
+var scoreInput = document.querySelector('#scoreText');
+var scoreList = document.querySelector('#scoreList');
+var scoreSpan = document.querySelector('#scoreSpan');
+var clearScoreButton = document.querySelector('#clearScoreButton');
