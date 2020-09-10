@@ -103,4 +103,9 @@ function pageChange1() {
 	possAnswer4.classList.remove('hideMe');
 	lineDisp.classList.remove('hideMe');
 	answerDisp.classList.remove('hideMe');
+	mainHeadDisp.textcontent = gameArray[0]['question'];
+	possAnswer1.textcontent = gameArray[0]['answer1'];
+	possAnswer2.textcontent = gameArray[0]['answer2'];
+	possAnswer3.textcontent = gameArray[0]['answer3'];
+	possAnswer4.textcontent = gameArray[0]['rightAnswer1'];
 }
