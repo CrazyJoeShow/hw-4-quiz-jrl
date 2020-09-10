@@ -94,3 +94,13 @@ function scoreKeeper() {
 }
 
 // Page start
+function pageChange1() {
+	timerButton.classList.add('hideMe');
+	subHeadDisp.classList.add('hideMe');
+	possAnswer1.classList.remove('hideMe');
+	possAnswer2.classList.remove('hideMe');
+	possAnswer3.classList.remove('hideMe');
+	possAnswer4.classList.remove('hideMe');
+	lineDisp.classList.remove('hideMe');
+	answerDisp.classList.remove('hideMe');
+}
