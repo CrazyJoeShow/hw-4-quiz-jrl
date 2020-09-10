@@ -34,9 +34,36 @@ var scoreStorageArray = [];
 // object literal for the questions
 
 var gameArray = [
-    {   page: 1,
-        question: "Answer me this,  2 + 2 ?"
-        answer1: "what is 7 Alex. "
-        
-    }
-]
+	{
+		page: 1,
+		question: 'Answer me this,  2 + 2 ?',
+		answer1: 'what is 7 Alex.',
+		answer2: 'what is 4 Alex',
+		answer3: 'what is 5% Alex',
+		rightAnswer: 'TOASTERS.',
+	},
+	{
+		page: 2,
+		question: 'Answer me this,  3 + 4 ?',
+		answer1: 'what is 7 Alex.',
+		answer2: 'what is 4 Alex',
+		answer3: 'what is 99 Alex',
+		rightAnswer: 'BEEFWELLINGTON',
+	},
+	{
+		page: 3,
+		question: 'Answer me this, Am I right, or am I right!?',
+		answer1: 'what is 7 Alex.',
+		answer2: "Don't pick this one. Seriously.",
+		answer3: 'May be Alex not sure.',
+		rightAnswer: 'DEFINITELY NOT RIGHT.',
+	},
+	{
+		page: 4,
+		question: 'Not a question.',
+		answer1: 'Sure.',
+		answer2: 'Could be.',
+		answer3: 'You tell me.',
+		rightAnswer: 'Definitely this one then.',
+	},
+];
