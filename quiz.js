@@ -139,4 +139,10 @@ function pageChange5() {
 	document.getElementById('disappearDiv').remove();
 	document.getElementById('lineId').remove();
 	mainHeadDisp.classList.remove('text-center');
+	mainHeadDisp.textcontent = 'END';
+	subHeadDisp.classList.remove('text-center');
+	subHeadDisp.textcontent = 'Your Score' + trackedScore;
+	subHeadDisp.classList.remove('hideMe');
+	answerDisp.classList.add('hideMe');
+	formSubz.classList.remove('hideMe');
 }
