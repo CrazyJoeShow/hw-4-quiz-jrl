@@ -67,3 +67,21 @@ var gameArray = [
 		rightAnswer: 'Definitely this one then.',
 	},
 ];
+
+//TIMER
+var secondsLeft = 90;
+var wrongAnswerLoss = -10;
+timerButton.addEventListener('click', function () {
+	pageChange1();
+});
+function setTimer() {
+	var timerInterval = setInterval(function () {
+		secondsLeft--;
+		countDownNumbDisp.textContent = secondsLeft;
+		if (secondsLeft <= 0) {
+			clearInterval(timerInterval);
+			countDownNumbDisp.textcontent = 0;
+			answerDisp.textContent = "You've ran out of time";
+		}
+	}, 1000);
+}
