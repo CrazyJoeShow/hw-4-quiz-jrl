@@ -27,3 +27,16 @@ var scoreInput = document.querySelector('#scoreText');
 var scoreList = document.querySelector('#scoreList');
 var scoreSpan = document.querySelector('#scoreSpan');
 var clearScoreButton = document.querySelector('#clearScoreButton');
+
+//Local storage
+var scoreStorageArray = [];
+
+// object literal for the questions
+
+var gameArray = [
+    {   page: 1,
+        question: "Answer me this,  2 + 2 ?"
+        answer1: "what is 7 Alex. "
+        
+    }
+]
