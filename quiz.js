@@ -81,60 +81,16 @@ function setTimer() {
 		if (secondsLeft <= 0) {
 			clearInterval(timerInterval);
 			countDownNumbDisp.textcontent = 0;
-			answerDisp.textContent = "You've ran out of time";
+			answerDisp.textContent = "You've ran out of time.";
 		}
 	}, 1000);
 }
 
-function pageChange1() {
-	timerButton.classList.add('hideMe');
-	subHeadDisp.classList.add('hideMe');
-	posiAnswer1.classList.remove('hideMe');
-	posiAnswer2.classList.remove('hideMe');
-	posiAnswer3.classList.remove('hideMe');
-	posiAnswer4.classList.remove('hideMe');
-	lineDisp.classList.remove('hideMe');
-	answerDisp.classList.remove('hideMe');
-	mainHeadDisp.textContent = gameArray[0]['question'];
-	posiAnswer1.textContent = gameArray[0]['answer1'];
-	posiAnswer2.textContent = gameArray[0]['answer2'];
-	posiAnswer3.textContent = gameArray[0]['answer3'];
-	posiAnswer4.textContent = gameArray[0]['rightAnswer1'];
+// Highest score
+function scoreKeeper() {
+	scoreTab = 100 + secondsLeft * 10;
+	trackedScore = trackedScore + scoreTab;
+	userScore.textContent = trackedScore;
 }
-function pageChange2() {
-	mainHeadDisp.textContent = gameArray[1]['question'];
-	posiAnswer1.textContent = gameArray[1]['answer1'];
-	posiAnswer2.textContent = gameArray[1]['answer2'];
-	posiAnswer3.textContent = gameArray[1]['rightAnswer2'];
-	posiAnswer4.textContent = gameArray[1]['answer3'];
-}
-function pageChange3() {
-	mainHeadDisp.textContent = gameArray[2]['question'];
-	posiAnswer1.textContent = gameArray[2]['answer1'];
-	posiAnswer2.textContent = gameArray[2]['rightAnswer3'];
-	posiAnswer3.textContent = gameArray[2]['answer3'];
-	posiAnswer4.textContent = gameArray[2]['answer2'];
-}
-function pageChange4() {
-	mainHeadDisp.textContent = gameArray[3]['question'];
-	posiAnswer1.textContent = gameArray[3]['answer1'];
-	posiAnswer2.textContent = gameArray[3]['rightAnswer4'];
-	posiAnswer3.textContent = gameArray[3]['answer3'];
-	posiAnswer4.textContent = gameArray[3]['answer2'];
-}
-//******************************************************************
-//FINAL PAGE
-function pageChange5() {
-	answerDisp.textContent = 'QUIZ COMPLETE!';
-	document.getElementById('disappearDiv').remove();
-	document.getElementById('lineId').remove();
-	mainHeadDisp.classList.remove('text-center');
-	mainHeadDisp.textContent = 'All done!';
-	subHeadDisp.classList.remove('text-center');
-	subHeadDisp.textContent = 'YOUR SCORE: ' + trackedScore;
-	subHeadDisp.classList.remove('hideMe');
-	answerDisp.classList.add('hideMe');
-	formSubz.classList.remove('hideMe');
 
-	// submitScore();
-}
+// Page start
